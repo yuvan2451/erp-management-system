@@ -7,6 +7,7 @@ import inventoryRouter from './modules/inventory/inventory.routes';
 import quotationRouter from './modules/quotations/quotation.routes';
 import salesOrderRouter from './modules/sales-orders/sales-order.routes';
 import dispatchRouter from "./modules/dispatches/dispatch.routes";
+import cors from "cors";
 /**
  * Express Application Setup
  *
@@ -16,7 +17,11 @@ import dispatchRouter from "./modules/dispatches/dispatch.routes";
  * to run API integration tests without binding to a live network port or causing port conflicts.
  */
 const app: Application = express();
-
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  }),
+);
 /**
  * Request Parsing Middleware
  *
