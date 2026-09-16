@@ -1,4 +1,6 @@
 import express, { Application, Request, Response } from 'express';
+import authRouter from './modules/auth/auth.routes';
+
 
 /**
  * Express Application Setup
@@ -17,6 +19,15 @@ const app: Application = express();
  * payloads in JSON format. express.json() parses incoming JSON request bodies into req.body.
  */
 app.use(express.json());
+
+/**
+ * Authentication Routes
+ *
+ * The authentication router exposes the public login endpoint.
+ * Login itself does not require a JWT because it is the endpoint
+ * that creates the JWT after validating the user's credentials.
+ */
+app.use('/api/auth', authRouter);
 
 /**
  * Health Check Endpoint

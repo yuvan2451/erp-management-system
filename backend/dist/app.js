@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const auth_routes_1 = __importDefault(require("./modules/auth/auth.routes"));
 /**
  * Express Application Setup
  *
@@ -20,6 +21,14 @@ const app = (0, express_1.default)();
  * payloads in JSON format. express.json() parses incoming JSON request bodies into req.body.
  */
 app.use(express_1.default.json());
+/**
+ * Authentication Routes
+ *
+ * The authentication router exposes the public login endpoint.
+ * Login itself does not require a JWT because it is the endpoint
+ * that creates the JWT after validating the user's credentials.
+ */
+app.use('/api/auth', auth_routes_1.default);
 /**
  * Health Check Endpoint
  *
