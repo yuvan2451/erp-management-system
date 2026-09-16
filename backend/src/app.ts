@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import authRouter from './modules/auth/auth.routes';
-
+import customerRouter from './modules/customers/customer.routes';
 
 /**
  * Express Application Setup
@@ -28,7 +28,7 @@ app.use(express.json());
  * that creates the JWT after validating the user's credentials.
  */
 app.use('/api/auth', authRouter);
-
+app.use('/api/customers', customerRouter);
 /**
  * Health Check Endpoint
  *
