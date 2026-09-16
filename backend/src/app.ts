@@ -6,6 +6,7 @@ import productRouter from './modules/products/product.routes';
 import inventoryRouter from './modules/inventory/inventory.routes';
 import quotationRouter from './modules/quotations/quotation.routes';
 import salesOrderRouter from './modules/sales-orders/sales-order.routes';
+import dispatchRouter from "./modules/dispatches/dispatch.routes";
 /**
  * Express Application Setup
  *
@@ -38,7 +39,8 @@ app.use('/api/products', productRouter);
 app.use('/api/inventory', inventoryRouter);
 app.use('/api/quotations', quotationRouter);
 app.use('/api/sales-orders', salesOrderRouter);
-console.log('Sales Order router registered');
+app.use('/api/dispatches', dispatchRouter);
+
 /**
  * Health Check Endpoint
  *

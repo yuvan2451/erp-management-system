@@ -6,6 +6,8 @@ import {
   getSalesOrdersController,
 } from "./sales-order.controller";
 
+import { createDispatchController } from "../dispatches/dispatch.controller";
+
 import { authenticateToken } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
 
@@ -25,6 +27,23 @@ router.post(
   authenticateToken,
   requireRole("ADMIN"),
   confirmSalesOrderController,
+);
+
+/**
+ * Create a Dispatch for a confirmed Sales Order.
+ *
+ * ADMIN-only operation.
+ *
+ * CONFIRMED → DISPATCHED
+ *
+ * This operation decreases physical inventory
+ * and releases the corresponding reservation.
+ */
+router.post(
+  "/:id/dispatch",
+  authenticateToken,
+  requireRole("ADMIN"),
+  createDispatchController,
 );
 
 /**
