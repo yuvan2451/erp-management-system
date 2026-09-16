@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import authRouter from './modules/auth/auth.routes';
 import customerRouter from './modules/customers/customer.routes';
-
+import enquiryRouter from './modules/enquiries/enquiry.routes';
 /**
  * Express Application Setup
  *
@@ -29,6 +29,7 @@ app.use(express.json());
  */
 app.use('/api/auth', authRouter);
 app.use('/api/customers', customerRouter);
+app.use('/api/enquiries', enquiryRouter);
 /**
  * Health Check Endpoint
  *
