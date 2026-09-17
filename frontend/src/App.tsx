@@ -12,19 +12,20 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Enquiries from "./pages/Enquiries";
 import Quotations from "./pages/Quotations";
+import SalesOrders from "./pages/SalesOrders";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Public login screen */}
+          {/* Public route */}
           <Route
             path="/login"
             element={<Login />}
           />
 
-          {/* All ERP screens require authentication */}
+          {/* Protected ERP routes */}
           <Route element={<ProtectedRoute />}>
             <Route
               path="/enquiries"
@@ -36,21 +37,13 @@ function App() {
               element={<Quotations />}
             />
 
-            {/* Sales Orders will be built next */}
             <Route
               path="/sales-orders"
-              element={
-                <div className="page-container">
-                  <h2>Sales Orders</h2>
-                  <p>
-                    Sales Orders screen coming next.
-                  </p>
-                </div>
-              }
+              element={<SalesOrders />}
             />
           </Route>
 
-          {/* Redirect unknown routes */}
+          {/* Default route */}
           <Route
             path="*"
             element={
