@@ -3,16 +3,14 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import Enquiries from "./pages/Enquiries";
 /**
  * Temporary screens.
  *
  * These will be replaced with the actual ERP screens
  * as we build each feature.
  */
-function EnquiriesPlaceholder() {
-  return <h1>Enquiries</h1>;
-}
+
 
 function QuotationsPlaceholder() {
   return <h1>Quotations</h1>;
@@ -32,10 +30,7 @@ function App() {
 
           {/* Protected ERP routes */}
           <Route element={<ProtectedRoute />}>
-            <Route
-              path="/enquiries"
-              element={<EnquiriesPlaceholder />}
-            />
+           <Route path="/enquiries" element={<Enquiries />} />
 
             <Route
               path="/quotations"
