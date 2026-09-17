@@ -1,0 +1,431 @@
+/* =========================================================
+   QUOTATIONS ERP PAGE
+   ========================================================= */
+
+.quotation-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.quotation-page .topbar {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.quotation-page .page-header {
+  margin-bottom: 26px;
+}
+
+.quotation-page .page-header h2 {
+  margin-bottom: 6px;
+}
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.quotation-page .form-card {
+  margin-bottom: 24px;
+}
+
+.quotation-page .form-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.quotation-page .form-card-header h3 {
+  margin: 0;
+}
+
+.quotation-page .form-card-header p:not(.eyebrow) {
+  margin-top: 6px;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.quotation-page .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.quotation-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.quotation-page .form-group label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #334155;
+}
+
+.quotation-page .form-group input,
+.quotation-page .form-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SELECTED ENQUIRY
+   ========================================================= */
+
+.quotation-page .selected-enquiry-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 24px 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #e2e8f0;
+}
+
+.quotation-page .selected-enquiry-info > div {
+  padding: 15px 17px;
+  background: #f8fafc;
+}
+
+.quotation-page .selected-enquiry-info span {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.quotation-page .selected-enquiry-info strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.quotation-page .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 26px 0 14px;
+}
+
+.quotation-page .section-heading h4 {
+  margin: 0;
+  color: #172033;
+  font-size: 16px;
+}
+
+.quotation-page .section-heading p {
+  margin: 5px 0 0;
+  color: #718096;
+  font-size: 12px;
+}
+
+/* =========================================================
+   QUOTATION ITEM TABLE
+   ========================================================= */
+
+.quotation-page .quotation-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.quotation-page .quotation-items-table {
+  min-width: 1000px;
+}
+
+.quotation-page .quotation-items-table th {
+  background: #f8fafc;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.quotation-page .quotation-items-table td {
+  vertical-align: middle;
+}
+
+.quotation-page .quotation-items-table input,
+.quotation-page .quotation-items-table select {
+  min-height: 38px;
+  box-sizing: border-box;
+}
+
+.quotation-page .quotation-items-table select {
+  min-width: 260px;
+}
+
+/* =========================================================
+   INPUT WITH % SUFFIX
+   ========================================================= */
+
+.quotation-page .input-with-suffix {
+  position: relative;
+  width: 100%;
+}
+
+.quotation-page .input-with-suffix input {
+  padding-right: 28px;
+}
+
+.quotation-page .input-with-suffix span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* =========================================================
+   LINE AMOUNT
+   ========================================================= */
+
+.quotation-page .line-amount {
+  white-space: nowrap;
+  color: #172033;
+  font-size: 13px;
+}
+
+/* =========================================================
+   REMOVE ITEM
+   ========================================================= */
+
+.quotation-page .remove-item-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.quotation-page .remove-item-btn:hover:not(:disabled) {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.quotation-page .remove-item-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   QUOTATION SUMMARY
+   ========================================================= */
+
+.quotation-page .quotation-summary {
+  width: 390px;
+  max-width: 100%;
+  margin: 22px 0 0 auto;
+  padding: 18px 20px;
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.quotation-page .summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 7px 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.quotation-page .summary-row strong {
+  color: #334155;
+}
+
+.quotation-page .summary-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #d7dde7;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.quotation-page .summary-total strong {
+  font-size: 20px;
+}
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.quotation-page .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e9f0;
+}
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.quotation-page .content-card {
+  overflow: hidden;
+}
+
+.quotation-page .table-container {
+  overflow-x: auto;
+}
+
+.quotation-page .data-table {
+  width: 100%;
+}
+
+.quotation-page .data-table td {
+  white-space: nowrap;
+}
+
+.quotation-page .table-secondary-text {
+  display: block;
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.quotation-page .action-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quotation-page .btn-danger {
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.quotation-page .btn-danger:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.quotation-page .status-draft {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.quotation-page .status-sent {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.quotation-page .status-accepted {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.quotation-page .status-rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.quotation-page .loading-spinner {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 12px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #172033;
+  border-radius: 50%;
+  animation: quotation-spin 0.8s linear infinite;
+}
+
+@keyframes quotation-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .quotation-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-page .selected-enquiry-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .quotation-page .selected-enquiry-info {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-page .form-card {
+    padding: 18px;
+  }
+
+  .quotation-page .form-card-header {
+    flex-direction: column;
+  }
+
+  .quotation-page .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quotation-page .quotation-summary {
+    width: 100%;
+  }
+
+  .quotation-page .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .quotation-page .form-actions .btn {
+    width: 100%;
+  }
+}

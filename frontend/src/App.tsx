@@ -1,52 +1,64 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import { AuthProvider } from "./context/AuthContext";
-import Login from "./pages/Login";
+
 import ProtectedRoute from "./components/ProtectedRoute";
+
+import Login from "./pages/Login";
 import Enquiries from "./pages/Enquiries";
-/**
- * Temporary screens.
- *
- * These will be replaced with the actual ERP screens
- * as we build each feature.
- */
-
-
-function QuotationsPlaceholder() {
-  return <h1>Quotations</h1>;
-}
-
-function SalesOrdersPlaceholder() {
-  return <h1>Sales Orders</h1>;
-}
+import Quotations from "./pages/Quotations";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Public route */}
-          <Route path="/login" element={<Login />} />
+          {/* Public login screen */}
+          <Route
+            path="/login"
+            element={<Login />}
+          />
 
-          {/* Protected ERP routes */}
+          {/* All ERP screens require authentication */}
           <Route element={<ProtectedRoute />}>
-           <Route path="/enquiries" element={<Enquiries />} />
+            <Route
+              path="/enquiries"
+              element={<Enquiries />}
+            />
 
             <Route
               path="/quotations"
-              element={<QuotationsPlaceholder />}
+              element={<Quotations />}
             />
 
+            {/* Sales Orders will be built next */}
             <Route
               path="/sales-orders"
-              element={<SalesOrdersPlaceholder />}
+              element={
+                <div className="page-container">
+                  <h2>Sales Orders</h2>
+                  <p>
+                    Sales Orders screen coming next.
+                  </p>
+                </div>
+              }
             />
           </Route>
 
-          {/* Default route */}
+          {/* Redirect unknown routes */}
           <Route
             path="*"
-            element={<Navigate to="/login" replace />}
+            element={
+              <Navigate
+                to="/enquiries"
+                replace
+              />
+            }
           />
         </Routes>
       </AuthProvider>
